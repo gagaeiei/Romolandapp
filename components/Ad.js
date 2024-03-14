@@ -27,21 +27,29 @@ export default function Ad(props) {
     return (
         <View style={props.style}>
             <View>
-
                 <FlatList
                     horizontal={true}
                     data={onlineTours}
-                    renderItem={({ item }) => (
-                        <View style={{ marginRight: -35,padding:30 }}>
-                            <Image style={{ width: 250, height: 150, borderRadius: 10 }} source={{ uri: item.uri }} />
-                            
-                        </View>
-                    )}
+                    renderItem={
+                        ({ item, index }) => {
+                            console.log(item, index, item.uri);
+                            return (
+                                <View style={{ marginRight: 10 }}>
+                                    <Image style={{ flex: 1, resizeMode: "cover", width: 200, height: 200, borderRadius: 10 }} source={{ uri: item.uri }}>
+                                    </Image>
+                                    <View style={{
+                                        marginTop: -30, height: 30, width: 200, paddingHorizontal: 10, backgroundColor: 'black', opacity: 0.5, borderBottomLeftRadius: 10, borderBottomRightRadius: 10
+                                    }}>
+                                        <Text style={{ fontSize: 20, color: "white" }}> {item.title}</Text>
+                                    </View>
+                                </View>
+                            );
+                        }
+                    }
                     keyExtractor={item => item.id}
                 />
             </View>
         </View>
+
     );
 }
-
- 
