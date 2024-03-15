@@ -13,7 +13,7 @@ export default function Back() {
         <View style={{ flex: 1 , backgroundColor : '#bbe5ed' }}>
           
        
-          <Ad/>
+          <Facility/>
           
 
         </View>

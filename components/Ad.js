@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, Text, View } from "react-native";
+import { FlatList, Image, ScrollView, Text, View } from "react-native";
+
 
 export default function Ad(props) {
     const tours = [
-        { "id": "1",  "uri": "https://github.com/gagaeiei/Romolandapp/blob/af512e139f48002822db2a44881c438cec1cd505/assets/Ad/Ad1.jpg" },
-        { "id": "2", "uri": "https://github.com/gagaeiei/Romolandapp/blob/af512e139f48002822db2a44881c438cec1cd505/assets/Ad/Ad2.jpg" },
-        { "id": "3",  "uri": "https://github.com/gagaeiei/Romolandapp/blob/af512e139f48002822db2a44881c438cec1cd505/assets/Ad/Ad3.png" }
+        [
+            { "id": "1",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad1.jpg" },
+            { "id": "2", "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad2.jpg" },
+            { "id": "3",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad3.png" },
+            ]
     ];
     const [onlineTours, setOnlineTours] = useState([]);
     const loadOnlineTours = async () => {
@@ -22,13 +25,16 @@ export default function Ad(props) {
     useEffect(() => {
         loadOnlineTours();
     }, []);
-            
 
     return (
         <View style={props.style}>
+
             <View>
+                <Text style={{ fontSize: 20 }}>Tour</Text>
+                <Text style={{ color: "gray", marginVerical: 10 }}>Let find out What most interesting things</Text>
                 <FlatList
                     horizontal={true}
+                    //data={tours}
                     data={onlineTours}
                     renderItem={
                         ({ item, index }) => {
