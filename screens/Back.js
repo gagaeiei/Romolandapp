@@ -5,7 +5,7 @@ import Infomation from "../components/Information";
 import MyUnit from "../components/MyUnit";
 import Ad from "../components/Ad";
 import Facility from "../components/Facility";
-import Phonebook from "../components/Phonebook";
+
 
 
 
@@ -14,7 +14,7 @@ export default function Back() {
         <View style={{ flex: 1 , backgroundColor : '#bbe5ed' }}>
           
        
-          <Phonebook/>
+          <Facility/>
         
           
 
