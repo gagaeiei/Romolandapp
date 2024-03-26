@@ -6,6 +6,8 @@ import { Entypo } from '@expo/vector-icons';
 
 
 export default function Facility(props) {
+
+
     const Event = [
         { "id": "1", "title": "Meeting Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-1.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
         { "id": "2", "title": "Workshop Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-2.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
@@ -39,6 +41,7 @@ export default function Facility(props) {
         <View style={props.style}>
             <View >
                 {/* View ก้อนที่ 1 */}
+                
                 <View style={{ flexDirection: "row", backgroundColor: "white", padding: 15 }}>
                     <TouchableOpacity >
                         <AntDesign name="leftcircleo" size={30} color="black" />

@@ -5,7 +5,11 @@ import Infomation from "../components/Information";
 import MyUnit from "../components/MyUnit";
 import Ad from "../components/Ad";
 import Facility from "../components/Facility";
-import Booking from "../components/booking";
+import RootStack from "../Navigation/RootStack";
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTab from "../Navigation/BottomTab";
+import HomeStack from "../Navigation/HomeStack";
+
 
 
 
@@ -16,8 +20,12 @@ export default function Back() {
         <View style={{ flex: 1 , backgroundColor : '#bbe5ed' }}>
           
        
-          <Booking/>
-        
+   
+          <NavigationContainer>
+    {/*  <HomeStack />  */}
+       {/* <BottomTab /> */}
+       <RootStack />
+    </NavigationContainer>
           
 
         </View>

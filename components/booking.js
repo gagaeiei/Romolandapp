@@ -32,14 +32,15 @@ export default function Booking(props) {
         loadOnlineTours();
     }, []);
 
-    return (
+   
 
-
+        function FlameScreen(){
+            return (
         <View style={props.style}>
             <View >
                 {/* View ก้อนที่ 1 */}
                 <View style={{ flexDirection: "row", backgroundColor: "white", padding: 15 }}>
-                    <TouchableOpacity >
+                <TouchableOpacity onPress={onPress}>
                         <AntDesign name="leftcircleo" size={30} color="black" />
                     </TouchableOpacity>
                     <Text style={{ fontSize: 25, textAlign: "center", flexDirection: "row", marginLeft: 110 }} >Facility Booking</Text>
@@ -111,4 +112,6 @@ export default function Booking(props) {
         </View>
 
     );
+}
+
 }
