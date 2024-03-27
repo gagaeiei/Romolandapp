@@ -5,15 +5,20 @@ import { FlatList, Image, ScrollView, Text, View } from "react-native";
 export default function Ad(props) {
     const tours = [
         [
-            { "id": "1",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad1.jpg" },
-            { "id": "2", "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad2.jpg" },
-            { "id": "3",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/assets/Ad/Ad3.png" },
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster1.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster2.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster3.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster4.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster5.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster6.jpg"},
+            {"id" : "1", "uri" : "https://raw.githubusercontent.com/glucosejsl7/Data-source/main/search/Poster/poster7.jpg"}
+          
             ]
     ];
     const [onlineTours, setOnlineTours] = useState([]);
     const loadOnlineTours = async () => {
         try {
-            let promise = await fetch('https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/image/ad.js');
+            let promise = await fetch('https://raw.githubusercontent.com/glucosejsl7/Data-source/main/poster.json');
             let data = await promise.json();
             console.log("Load Data : ", data);
             //SET STATE

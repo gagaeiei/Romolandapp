@@ -33,29 +33,8 @@ export default function Booking(props) {
     }, []);
 
    
-
-        function FlameScreen(){
             return (
         <View style={props.style}>
-            <View >
-                {/* View ก้อนที่ 1 */}
-                <View style={{ flexDirection: "row", backgroundColor: "white", padding: 15 }}>
-                <TouchableOpacity onPress={onPress}>
-                        <AntDesign name="leftcircleo" size={30} color="black" />
-                    </TouchableOpacity>
-                    <Text style={{ fontSize: 25, textAlign: "center", flexDirection: "row", marginLeft: 110 }} >Facility Booking</Text>
-                </View>
-                {/* View ก้อนที่ 2 */}
-                <View style={{ flexDirection: "row", marginTop: 5 }}>
-                    <View style={{ backgroundColor: "white", width: 250, height: 60, marginLeft: -15 }}>
-                        <Text style={{ fontSize: 20, textAlign: "center", marginTop: 15 }} >Facility List</Text>
-
-                    </View>
-                    {/* View ก้อนที่ 3 */}
-                    <View style={{ backgroundColor: "white", width: 250, height: 60, marginLeft: -15 }}>
-                        <Text style={{ fontSize: 20, textAlign: "center", color: "#111d4a", marginTop: 15 }} >My Booking</Text>
-                    </View>
-                </View>
                 <View style={{ marginTop: 15 }}></View>
                 <FlatList
                     horizontal={false}
@@ -109,9 +88,6 @@ export default function Booking(props) {
                 />
 
             </View>
-        </View>
 
     );
-}
-
 }

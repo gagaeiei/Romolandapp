@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Button, FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -9,19 +9,37 @@ import { Feather } from '@expo/vector-icons';
 import { SliderBox } from "react-native-image-slider-box";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Home() {
+export default function Home(props) {
     const navigation = useNavigation();
-    const [images, setImages] = useState([
-
-        require('../assets/Ad/Ad1.jpg'),
-        require('../assets/Ad/Ad2.jpg'),
-    ])
+  
 
     onPressButton = () => {
         console.log('Button pressed!');
         
     };
 
+    const tours = [
+        [
+            { "id": "1",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/Ad/Ad1.jpg" },
+            { "id": "2", "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/Ad/Ad2.jpg" },
+            { "id": "3",  "uri": "https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/Ad/Ad3.png" },
+            ]
+    ];
+    const [onlineTours, setOnlineTours] = useState([]);
+    const loadOnlineTours = async () => {
+        try {
+            let promise = await fetch('https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/AD.json');
+            let data = await promise.json();
+            console.log("Load Data : ", data);
+            //SET STATE
+            setOnlineTours(data);
+        } catch (error) {
+            console.log("ERROR : ", error);
+        }
+    }
+    useEffect(() => {
+        loadOnlineTours();
+    }, []);
     return (
         <View style={{ flex: 1 }}>
             {/* View ก้อนที่ 1 */}
@@ -103,18 +121,18 @@ export default function Home() {
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-around", marginBottom: 10 }}>
                         
                             <View style={{ flexDirection: "column", borderRadius: 10, width: 100, height: 100, backgroundColor: "white", alignItems: "center", justifyContent: "center" }}>
-                                <MaterialCommunityIcons name="home-heart" size={60} color="#111d4a" onPress={()=>{ navigation.navigate("Facility"); }}/>
+                                <MaterialCommunityIcons name="home-heart" size={60} color="#111d4a" onPress={()=>{ navigation.navigate("FacilityTab"); }}/>
                                 <Text>Facilities</Text>
                             </View>
                        
                       
                             <View style={{ flexDirection: "column", borderRadius: 10, width: 100, height: 100, backgroundColor: "white", alignItems: "center", justifyContent: "center" }}>
-                                <FontAwesome6 name="screwdriver-wrench" size={60} color="#111d4a" />
+                                <FontAwesome6 name="screwdriver-wrench" size={60} color="#111d4a"  />
                                 <Text>Repair</Text>
                             </View>
                      
                             <View style={{ flexDirection: "column", borderRadius: 10, width: 100, height: 100, backgroundColor: "white", alignItems: "center", justifyContent: "center" }}>
-                                <AntDesign name="car" size={60} color="#111d4a" />
+                                <AntDesign name="car" size={60} color="#111d4a" onPress={()=>{ navigation.navigate("VisitorTab"); }} />
 
                                 <Text>Visitor</Text>
                             </View>
@@ -153,9 +171,34 @@ export default function Home() {
                 </View>
             </View>
             {/* View ก้อนที่ 6 */}
-           
-           
+            <View style={props.style}>
 
+<View>
+    
+    <FlatList
+        horizontal={true}
+        //data={tours}
+        sdata={onlineTours }
+        renderItem={
+            ({ item, index }) => {
+                console.log(item, index, item.uri);
+                return (
+                    <View style={{ marginRight: 10 }}>
+                        <Image style={{ flex: 1, resizeMode: "cover", width: 200, height: 200, borderRadius: 10 }} source={{ uri: item.uri }}>
+                        </Image>
+                        <View style={{
+                            marginTop: -30, height: 30, width: 200, paddingHorizontal: 10, backgroundColor: 'black', opacity: 0.5, borderBottomLeftRadius: 10, borderBottomRightRadius: 10
+                        }}>
+                            <Text style={{ fontSize: 20, color: "white" }}> {item.title}</Text>
+                        </View>
+                    </View>
+                );
+            }
+        }
+        keyExtractor={item => item.id}
+    />
+</View>
+</View>
 
         </View>
     );
