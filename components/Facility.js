@@ -40,7 +40,7 @@ export default function Facility(props) {
         <View style={props.style}>
                 
                 
-                <View style={{ marginTop: 15 }}></View>
+                <View style={{ backgroundColor:"#bbe5ed"}}>
                 <FlatList
                     horizontal={false}
                     //data={tours}
@@ -50,8 +50,7 @@ export default function Facility(props) {
                         ({ item, index }) => {
                             console.log(item, index, item.uri);
                             return (
-                                
-
+                 
                                         <View style={{ marginLeft: 24, marginTop: 10 }}>
                                             {/* View ก้อนที่ 1 */}
                                             <View style={{ flexDirection: 'row', borderRadius: 10, borderWidth: 2, borderColor: "#111d4a", width: 400, height: 105, backgroundColor: "white" }}>
@@ -82,12 +81,12 @@ export default function Facility(props) {
                         }
                     
                 }
-
                 keyExtractor={item => item.id}
                 />
 
             </View>
 
+            </View>
 
     );
 }

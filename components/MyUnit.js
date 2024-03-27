@@ -13,21 +13,8 @@ export default function MyUnit() {
     };
 
     return (
-        <View >
-            {/* View ก้อนที่ 1 */}
-            <View style={{ flexDirection: "row", backgroundColor: "white", padding: 15 }}>
-                <TouchableOpacity >
-                    <View style={{ marginTop: 5 }}>
-                        <AntDesign name="left" size={30} color="black" />
-                    </View>
-                </TouchableOpacity>
-                <Text style={{ fontSize: 25, textAlign: "center", flexDirection: "row", marginLeft: 130 }} >My Units</Text>
-                <TouchableOpacity >
-                    <View style={{ marginLeft: 135, marginTop: 5 }}>
-                        <AntDesign name="plussquareo" size={30} color="#111d4a" />
-                    </View>
-                </TouchableOpacity>
-            </View>
+        <View style={{flex:1,backgroundColor: "#bbe5ed"}}>
+            
             {/* View ก้อนที่ 2*/}
             <View style={{ alignItems: "flex-start", marginLeft: 20, marginTop: 10 }}>
                 <Text style={{ fontSize: 20, color: "black" }}>All:1</Text>

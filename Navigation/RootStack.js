@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 export default function RootStack() {
     return (
         <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
+            <Stack.Screen name="Home" component={Home} options={{ title: 'Home',headerShown: false  }} />
             <Stack.Screen name="Information" component={Information} options={{ title: 'Information' }} />
             <Stack.Screen name="MyUnit" component={MyUnit} options={{ title: 'My Unit' }} />
             <Stack.Screen name="Facility" component={Facility} options={{ title: 'Facility' }} />

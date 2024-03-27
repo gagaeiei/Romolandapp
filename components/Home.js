@@ -41,7 +41,7 @@ export default function Home(props) {
         loadOnlineTours();
     }, []);
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor:"#bbe5ed"}}>
             {/* View ก้อนที่ 1 */}
             <View style={{ backgroundColor: "white", padding: 20, flexDirection: "row" }}>
 
@@ -72,12 +72,15 @@ export default function Home(props) {
                 </View>
             </View>
             {/* View ก้อนที่ 1.5 */}
-            <View style={{  padding: 10, flexDirection: "row" }}></View>
-            <View style={{ flexDirection: "row-reverse", padding: 5, marginLeft: 10  }}>
-                    <View style={{ backgroundColor: '#111d4a', padding: 10, borderRadius: 5 }}>
-                        
+            <View style={{  padding: 10, flexDirection: "row"}}>
+            <Image style={{  width: 350, height: 350,marginVertical:-120,marginLeft:-50}} source={require("C:/Users/HP/Romolandapp/assets/image/romoland.png")} />
+           
+            <View style={{  padding: 5, marginLeft: -25  }}>
+                    <View style={{ backgroundColor: '#111d4a', padding: 10, borderRadius: 5}}>
                         <Button title='168/444 Kave TU' />
                         </View>
+                        </View>
+
                 </View>
 
 

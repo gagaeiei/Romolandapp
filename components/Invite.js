@@ -37,8 +37,8 @@ export default function Invite() {
         };
     
         return (
-            <View style={{ flex: 1, marginHorizontal:20,marginVertical:20 }}>
-             
+            <View style={{ flex: 1,backgroundColor: "#bbe5ed" }}>
+             <View style={{marginHorizontal:20,marginVertical:20}}>
                 <View>
                 <Text  style={{fontSize:20,color:"#111d4a"}}>Visitor Detail</Text>
                 <Text style={{fontSize:15,color:"gray"}}>This QR Code can be used for enter-exit only 1 time and can be used withn the specified date only.</Text>
@@ -84,8 +84,10 @@ export default function Invite() {
                 />
                  </View >
                  <View style={{justifyContent:"flex-end"}}>
-                <Button title="Confirm" onPress={saveText} />
+                 <Button title="Confirm" onPress={saveText} color="#111d4a" />
+
                 </View>
+            </View>
             </View>
         );
     }
