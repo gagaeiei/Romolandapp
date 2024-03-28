@@ -5,19 +5,6 @@ import { Entypo } from '@expo/vector-icons';
 
 
 export default function Facility(props) {
-
-
-    const Event = [
-        { "id": "1", "title": "Meeting Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-1.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "2", "title": "Workshop Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-2.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "3", "title": "Workshop 2", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-3.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "4", "title": "Workshop 3", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-4.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "5", "title": "Theater Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg", "place": "Building D", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "6", "title": "Music Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg", "place": "Building B", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "7", "title": "Pool Table", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg", "place": "Building C", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "8", "title": "Studio Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg", "place": "Building B", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> },
-        { "id": "9", "title": "Fitness Room", "uri": "https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/all/event-5.jpg", "place": "Building C", "Location": <Entypo name="location" size={18} color="#111d4a" />, "emoji": <AntDesign name="right" size={24} color="#111d4a" /> }
-    ];
     const [onlineTours, setOnlineTours] = useState([]);
     const loadOnlineTours = async () => {
         try {
@@ -44,8 +31,8 @@ export default function Facility(props) {
                 <FlatList
                     horizontal={false}
                     //data={tours}
-                    //data={onlineTours}
-                    data={Event}
+                    data={onlineTours}
+                    // data={Event}
                     renderItem={
                         ({ item, index }) => {
                             console.log(item, index, item.uri);
