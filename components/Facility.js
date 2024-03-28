@@ -8,7 +8,7 @@ export default function Facility(props) {
     const [onlineTours, setOnlineTours] = useState([]);
     const loadOnlineTours = async () => {
         try {
-            let promise = await fetch('https://raw.githubusercontent.com/arc6828/myreactnative/master/assets/json/trips.json');
+            let promise = await fetch('https://raw.githubusercontent.com/gagaeiei/Romolandapp/master/roomnew.json');
             let data = await promise.json();
             console.log("Load Data : ", data);
             //SET STATE
